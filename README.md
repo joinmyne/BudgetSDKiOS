@@ -24,14 +24,14 @@ A comprehensive iOS SDK for building financial applications with modular budget 
 Add BudgetSDK to your project using Xcode:
 
 1. In Xcode, go to **File** → **Add Package Dependencies**
-2. Enter the repository URL: `https://github.com/YOUR_USERNAME/BudgetSDK-Distribution.git`
+2. Enter the repository URL: `https://github.com/joinmyne/BudgetSDK-iOS.git`
 3. Select the version and add to your target
 
 Or add it to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/YOUR_USERNAME/BudgetSDK-Distribution.git", from: "1.0.0")
+    .package(url: "https://github.com/joinmyne/BudgetSDK-iOS.git", from: "1.0.0")
 ]
 ```
 
