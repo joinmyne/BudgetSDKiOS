@@ -1,0 +1,1429 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios18.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name BudgetSDK
+// swift-module-flags-ignorable:  -interface-compiler-version 6.1.2
+import Charts
+import Combine
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol MyneTransactionDetailsScreenControllerDelegate : AnyObject {
+  func didTapOnDeleteButton()
+  func didTapOnCategory()
+}
+public class MyneTransactionDetailsScreenController : Combine.ObservableObject {
+  @Combine.Published @_projectedValueProperty($transactionDetails) public var transactionDetails: BudgetSDK.TransactionDetails? {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $transactionDetails: Combine.Published<BudgetSDK.TransactionDetails?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  weak public var delegate: (any BudgetSDK.MyneTransactionDetailsScreenControllerDelegate)?
+  public init()
+  public func showScreen() -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class SpendingModule : Combine.ObservableObject {
+  public static var dashboard: BudgetSDK.MyneDashboardScreenController? {
+    get
+  }
+  public static var spendingCategory: BudgetSDK.MyneSpendingCategoryScreenController? {
+    get
+  }
+  public static var category: BudgetSDK.MyneCategoryViewScreenController? {
+    get
+  }
+  public static var trending: BudgetSDK.MyneTrendViewScreenController? {
+    get
+  }
+  public static var transactionsOverView: BudgetSDK.MyneTrasnsactionsOverViewController? {
+    get
+  }
+  public static var filter: BudgetSDK.MyneFilterScreenController? {
+    get
+  }
+  public static var transactionDetails: BudgetSDK.MyneTransactionDetailsScreenController? {
+    get
+  }
+  public static var transactionCategory: BudgetSDK.MyneTransactionCategoryScreenController? {
+    get
+  }
+  public static var subCategory: BudgetSDK.MyneSubCategoryScreenController? {
+    get
+  }
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+
+public protocol MyneSpendingLimitCreationScreenControllerDelegate : AnyObject {
+  func didTapOnSaveLimit(isRepeatAll: Swift.Bool, updatedCategories: [BudgetSDK.SpendingCategoryModel])
+}
+@_hasMissingDesignatedInitializers public class MyneSpendingLimitCreationScreenController : Combine.ObservableObject {
+  @Combine.Published @_projectedValueProperty($isRepeatForAllEveryMonth) public var isRepeatForAllEveryMonth: Swift.Bool {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $isRepeatForAllEveryMonth: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($currency) public var currency: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $currency: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($categories) public var categories: [BudgetSDK.SpendingCategoryModel] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $categories: Combine.Published<[BudgetSDK.SpendingCategoryModel]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  weak public var delegate: (any BudgetSDK.MyneSpendingLimitCreationScreenControllerDelegate)?
+  public func showDashboard() -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+
+public protocol MyneCategoryViewScreenDelegate : AnyObject {
+  func didTapOnSaveBankAccounts(bankAccounts: [BudgetSDK.BankAccount])
+  func didSelectDateRange(startDate: Foundation.Date?, endDate: Foundation.Date?)
+  func didTapOnChartBar(chartDataItem: [BudgetSDK.ChartDataItem])
+  func didTapOnSeeTrend()
+}
+public class MyneCategoryViewScreenController : Combine.ObservableObject {
+  @Combine.Published @_projectedValueProperty($amountSpent) public var amountSpent: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $amountSpent: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($stackedBarChartItems) public var stackedBarChartItems: [BudgetSDK.ChartDataItem] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $stackedBarChartItems: Combine.Published<[BudgetSDK.ChartDataItem]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($transactionsData) public var transactionsData: [BudgetSDK.TransactionViewRowData] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $transactionsData: Combine.Published<[BudgetSDK.TransactionViewRowData]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  weak public var delegate: (any BudgetSDK.MyneCategoryViewScreenDelegate)?
+  public init()
+  public func showAccountAndDateSection(bankAccounts: [BudgetSDK.Bank]) -> some SwiftUICore.View
+  
+  public func showStackedBardChart(config: BudgetSDK.StackedBarSectionConfiguration) -> some SwiftUICore.View
+  
+  public func showTransactionsList() -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+@_Concurrency.MainActor @preconcurrency public struct DateSelectorFieldView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(selectedDate: SwiftUICore.Binding<Foundation.Date?>, title: Swift.String? = nil, dateFormat: Swift.String = "MMM dd, yyyy", onDateSelected: ((Foundation.Date) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s9BudgetSDK21DateSelectorFieldViewV4bodyQrvp", 0) __
+}
+extension BudgetSDK.DateSelectorFieldView {
+  @_Concurrency.MainActor @preconcurrency public init(selectedDate: SwiftUICore.Binding<Foundation.Date?>, title: Swift.String? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(selectedDate: SwiftUICore.Binding<Foundation.Date?>, title: Swift.String? = nil, dateFormat: Swift.String, onSelection: @escaping (Foundation.Date) -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public init(selectedDate: SwiftUICore.Binding<Foundation.Date?>, title: Swift.String? = nil, onSelection: @escaping (Foundation.Date) -> Swift.Void)
+}
+public protocol MyneTrendViewScreenDelegate : AnyObject {
+}
+public class MyneTrendViewScreenController : Combine.ObservableObject {
+  @Combine.Published @_projectedValueProperty($amountSpent) public var amountSpent: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $amountSpent: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($stackedBarChartItems) public var stackedBarChartItems: [BudgetSDK.ChartDataItem] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $stackedBarChartItems: Combine.Published<[BudgetSDK.ChartDataItem]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($averageSpentData) public var averageSpentData: BudgetSDK.SpendingWidgetViewData {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $averageSpentData: Combine.Published<BudgetSDK.SpendingWidgetViewData>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($lastTwelveMonthSpentData) public var lastTwelveMonthSpentData: BudgetSDK.SpendingWidgetViewData {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $lastTwelveMonthSpentData: Combine.Published<BudgetSDK.SpendingWidgetViewData>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($momChangeSpentData) public var momChangeSpentData: BudgetSDK.SpendingWidgetViewData {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $momChangeSpentData: Combine.Published<BudgetSDK.SpendingWidgetViewData>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($peakMonthSpentData) public var peakMonthSpentData: BudgetSDK.SpendingWidgetViewData {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $peakMonthSpentData: Combine.Published<BudgetSDK.SpendingWidgetViewData>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  weak public var delegate: (any BudgetSDK.MyneTrendViewScreenDelegate)?
+  public init()
+  public func showStackedBarChart(config: BudgetSDK.StackedBarSectionConfiguration) -> some SwiftUICore.View
+  
+  public func showSpendingWidgetsView() -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public protocol MyneTransactionCategoryScreenControllerDelegate : AnyObject {
+  func didSelectCategory(_ category: BudgetSDK.SpendingCategoryBoxData)
+}
+public class MyneTransactionCategoryScreenController : Combine.ObservableObject {
+  @Combine.Published @_projectedValueProperty($categories) public var categories: [BudgetSDK.SpendingCategoryBoxData] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $categories: Combine.Published<[BudgetSDK.SpendingCategoryBoxData]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  weak public var delegate: (any BudgetSDK.MyneTransactionCategoryScreenControllerDelegate)?
+  public init()
+  public func selectCategory(_ category: BudgetSDK.SpendingCategoryBoxData)
+  public func showScreen() -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+@_Concurrency.MainActor @preconcurrency public struct CurrencySelectorFieldView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(selectedCurrency: SwiftUICore.Binding<BudgetSDK.CurrencyDataModel?>, title: Swift.String? = nil, currencies: [BudgetSDK.CurrencyDataModel] = CurrencyDataModel.defaultCurrencies, onCurrencySelected: ((BudgetSDK.CurrencyDataModel) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s9BudgetSDK25CurrencySelectorFieldViewV4bodyQrvp", 0) __
+}
+extension BudgetSDK.CurrencyDataModel {
+  public static let defaultCurrencies: [BudgetSDK.CurrencyDataModel]
+}
+extension BudgetSDK.CurrencySelectorFieldView {
+  @_Concurrency.MainActor @preconcurrency public init(selectedCurrency: SwiftUICore.Binding<BudgetSDK.CurrencyDataModel?>, title: Swift.String? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(selectedCurrency: SwiftUICore.Binding<BudgetSDK.CurrencyDataModel?>, title: Swift.String? = nil, currencies: [BudgetSDK.CurrencyDataModel], onSelection: @escaping (BudgetSDK.CurrencyDataModel) -> Swift.Void)
+}
+extension BudgetSDK.BankAccount {
+  public var displayText: Swift.String {
+    get
+  }
+  public var shortDisplayText: Swift.String {
+    get
+  }
+  public var displayTextWithBalance: Swift.String {
+    get
+  }
+}
+@_Concurrency.MainActor @preconcurrency public struct BankAccountSelectorFieldView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(selectedBankAccount: SwiftUICore.Binding<BudgetSDK.BankAccount?>, title: Swift.String? = nil, onTap: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s9BudgetSDK28BankAccountSelectorFieldViewV4bodyQrvp", 0) __
+}
+extension BudgetSDK.BankAccountSelectorFieldView {
+  @_Concurrency.MainActor @preconcurrency public init(selectedBankAccount: SwiftUICore.Binding<BudgetSDK.BankAccount?>, title: Swift.String? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(selectedBankAccount: SwiftUICore.Binding<BudgetSDK.BankAccount?>, title: Swift.String? = nil, onSelection: @escaping () -> Swift.Void)
+}
+public struct SpendingCategoryData : Swift.Hashable {
+  public var id: Swift.String
+  public var iconURL: Swift.String
+  public var title: Swift.String
+  public var subtitle: Swift.String
+  public var trailingValue: Swift.String
+  public init(id: Swift.String, iconURL: Swift.String, title: Swift.String, subtitle: Swift.String, trailingValue: Swift.String)
+  public static func == (a: BudgetSDK.SpendingCategoryData, b: BudgetSDK.SpendingCategoryData) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum LocalizationHelper {
+  public static func localized(_ key: Swift.String) -> Swift.String
+}
+public struct TransactionViewRowData : Swift.Hashable {
+  public var id: Swift.String
+  public var iconURL: Swift.String
+  public var name: Swift.String
+  public var dateAndTime: Swift.String
+  public var value: Swift.String
+  public var categoryName: Swift.String
+  public init(id: Swift.String, iconURL: Swift.String, name: Swift.String, dateAndTime: Swift.String, value: Swift.String, categoryName: Swift.String)
+  public static func == (a: BudgetSDK.TransactionViewRowData, b: BudgetSDK.TransactionViewRowData) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol MyneFilterScreenControllerDelegate : AnyObject {
+  func didTapOnApplyFilter(selectedFilterTypes: [BudgetSDK.FilterType], selectedCategories: [BudgetSDK.SpendingCategoryBoxData])
+}
+public class MyneFilterScreenController : Combine.ObservableObject {
+  weak public var delegate: (any BudgetSDK.MyneFilterScreenControllerDelegate)?
+  public init()
+  public func configure(groupedFilters: [BudgetSDK.GroupedFilter], categories: [BudgetSDK.SpendingCategoryBoxData])
+  public func showFilterScreen() -> some SwiftUICore.View
+  
+  public func showActionButtons() -> some SwiftUICore.View
+  
+  public func selectFilter(_ filterType: BudgetSDK.FilterType, inGroup group: BudgetSDK.GroupedFilter)
+  public func selectCategory(_ category: BudgetSDK.SpendingCategoryBoxData)
+  public func clearSelections()
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+
+public protocol MyneSavingGoalsDashboardControllerDelegate : AnyObject {
+  func didTapOnSavingGoal(goal: BudgetSDK.SavingGoalsProgressViewData)
+  func didTapOnWidget()
+}
+@_hasMissingDesignatedInitializers public class MyneSavingGoalsDashboardController : Combine.ObservableObject {
+  weak public var delegate: (any BudgetSDK.MyneSavingGoalsDashboardControllerDelegate)?
+  @Combine.Published @_projectedValueProperty($savingGoalsList) public var savingGoalsList: [BudgetSDK.SavingGoalsProgressViewData] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $savingGoalsList: Combine.Published<[BudgetSDK.SavingGoalsProgressViewData]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public func showDashboard() -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public struct TransactionDetails : Swift.Hashable {
+  public init(id: Swift.String, iconURL: Swift.String, name: Swift.String, amount: Swift.String, account: Swift.String, status: Swift.String, category: Swift.String, categoryURL: Swift.String?)
+  public static func == (a: BudgetSDK.TransactionDetails, b: BudgetSDK.TransactionDetails) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+
+public protocol MyneSavingGoalsIconsControllerDelegate : AnyObject {
+  func didTapOnSaveButton(savingGoal: BudgetSDK.SavingGoalIconWidgetViewData)
+  func didTapOnCancelButton()
+}
+public class MyneSavingGoalsIconsController : Combine.ObservableObject {
+  weak public var delegate: (any BudgetSDK.MyneSavingGoalsIconsControllerDelegate)?
+  @Combine.Published @_projectedValueProperty($savingGoalIcons) public var savingGoalIcons: [BudgetSDK.SavingGoalIconWidgetViewData] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $savingGoalIcons: Combine.Published<[BudgetSDK.SavingGoalIconWidgetViewData]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($selectedGoalId) public var selectedGoalId: Swift.String? {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $selectedGoalId: Combine.Published<Swift.String?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public init()
+  public func showScreen() -> some SwiftUICore.View
+  
+  public func loadSavingGoalIcons(_ icons: [BudgetSDK.SavingGoalIconWidgetViewData])
+  public func selectGoal(_ goalId: Swift.String)
+  public func isGoalSelected(_ goalId: Swift.String) -> Swift.Bool
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public struct SpendingLimitOverallModel {
+  public init(savedAmount: Swift.String, targetAmount: Swift.String, isClickable: Swift.Bool)
+}
+@_hasMissingDesignatedInitializers final public class CashFlowModule : Combine.ObservableObject {
+  public static var shared: BudgetSDK.CashFlowModule
+  final public var dashboard: BudgetSDK.MyneCashFlowDashboardController? {
+    get
+  }
+  final public var details: BudgetSDK.MyneCashFlowDetailsController? {
+    get
+  }
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+
+public protocol MyneDashboardScreenDelegate : AnyObject {
+  func didTapOnChartBar(items: [BudgetSDK.ChartDataItem])
+  func didTapOnSpendingCategoryRow(object: BudgetSDK.SpendingCategoryData)
+  func didTapOnTransactionRow(object: BudgetSDK.TransactionViewRowData)
+  func didTapOnSaveBankAccounts(bankAccounts: [BudgetSDK.BankAccount])
+  func didSelectDateRange(startDate: Foundation.Date?, endDate: Foundation.Date?)
+  func didTapOnSpendingCategoryViewAll()
+  func didTapOnTransactionViewAll()
+}
+public class MyneDashboardScreenController : Combine.ObservableObject {
+  @Combine.Published @_projectedValueProperty($isLoadingScreen) public var isLoadingScreen: Swift.Bool {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $isLoadingScreen: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  weak public var delegate: (any BudgetSDK.MyneDashboardScreenDelegate)?
+  @Combine.Published @_projectedValueProperty($stackedBarChartItems) public var stackedBarChartItems: [BudgetSDK.ChartDataItem] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $stackedBarChartItems: Combine.Published<[BudgetSDK.ChartDataItem]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($spendingCategoryListData) public var spendingCategoryListData: [BudgetSDK.SpendingCategoryData] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $spendingCategoryListData: Combine.Published<[BudgetSDK.SpendingCategoryData]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($transactionListData) public var transactionListData: [BudgetSDK.TransactionViewRowData] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $transactionListData: Combine.Published<[BudgetSDK.TransactionViewRowData]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public init()
+  public func showAccountAndDateSection(bankAccounts: [BudgetSDK.Bank]) -> some SwiftUICore.View
+  
+  public func showStackedBar(configuration: BudgetSDK.StackedBarSectionConfiguration) -> some SwiftUICore.View
+  
+  public func showSpendingCategorySection() -> some SwiftUICore.View
+  
+  public func showTransactionSection() -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public struct SavingGoalsProgressViewData : Swift.Hashable {
+  public init(id: Swift.String, categoryIconURL: Swift.String, categoryName: Swift.String, progress: Swift.Double, formattedAmount: Swift.String, formattedTotalAmount: Swift.String)
+  public static func == (a: BudgetSDK.SavingGoalsProgressViewData, b: BudgetSDK.SavingGoalsProgressViewData) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol MyneTrasnsactionsOverViewDelegate : AnyObject {
+  func didTapOnTransactionInSearchResult(transaction: BudgetSDK.TransactionViewRowData)
+  func didTaponTransactionInList(transaction: BudgetSDK.TransactionViewRowData)
+  func didTapOnFilterButton()
+}
+public class MyneTrasnsactionsOverViewController : Combine.ObservableObject {
+  weak public var delegate: (any BudgetSDK.MyneTrasnsactionsOverViewDelegate)?
+  @Combine.Published @_projectedValueProperty($searchtext) public var searchtext: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $searchtext: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($trnsactionListData) public var trnsactionListData: [BudgetSDK.TransactionViewRowData] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $trnsactionListData: Combine.Published<[BudgetSDK.TransactionViewRowData]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($filteredTransactions) public var filteredTransactions: [BudgetSDK.TransactionViewRowData] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $filteredTransactions: Combine.Published<[BudgetSDK.TransactionViewRowData]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($isSearchActive) public var isSearchActive: Swift.Bool {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $isSearchActive: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public init()
+  public func handleSearchTextChange()
+  public func activateSearchIfNeeded()
+  public func showSearchField() -> some SwiftUICore.View
+  
+  public func showTransactionsList(date: Swift.String) -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public struct CurrencyDataModel : Swift.Identifiable, Swift.Hashable {
+  public let id: Foundation.UUID
+  public let code: Swift.String
+  public let symbol: Swift.String
+  public init(code: Swift.String, symbol: Swift.String)
+  public var displayText: Swift.String {
+    get
+  }
+  public static func == (a: BudgetSDK.CurrencyDataModel, b: BudgetSDK.CurrencyDataModel) -> Swift.Bool
+  public typealias ID = Foundation.UUID
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol MyneSpendingCategoryScreenDelegate : AnyObject {
+  func didTapOnSaveBankAccounts(bankAccounts: [BudgetSDK.BankAccount])
+  func didSelectDateRange(startDate: Foundation.Date?, endDate: Foundation.Date?)
+  func didTaponCategory(category: BudgetSDK.SpendingCategoryData)
+}
+public class MyneSpendingCategoryScreenController : Combine.ObservableObject {
+  weak public var delegate: (any BudgetSDK.MyneSpendingCategoryScreenDelegate)?
+  @Combine.Published @_projectedValueProperty($spendingCategoriesList) public var spendingCategoriesList: [BudgetSDK.SpendingCategoryData] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $spendingCategoriesList: Combine.Published<[BudgetSDK.SpendingCategoryData]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($amountSpent) public var amountSpent: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $amountSpent: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public init()
+  public func showAccountAndDateSection(bankAccounts: [BudgetSDK.Bank]) -> some SwiftUICore.View
+  
+  public func showSpendingCategoriesSection() -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class SavingGoalsModule : Combine.ObservableObject {
+  public static var dashboard: BudgetSDK.MyneSavingGoalsDashboardController? {
+    get
+  }
+  public static var savingGoalsDetails: BudgetSDK.MyneSavingGoalsDetailsController? {
+    get
+  }
+  public static func savingGoalsForm(formState: BudgetSDK.MyneSavingGoalFormController.FormState) -> BudgetSDK.MyneSavingGoalFormController?
+  public static func savingGoalIconSelection() -> BudgetSDK.MyneSavingGoalsIconsController?
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+
+public struct SpendingCategoryBoxData {
+  public let id: Swift.String
+  public let name: Swift.String
+  public let iconURL: Swift.String
+  public let isSelected: Swift.Bool
+  public init(id: Swift.String, name: Swift.String, iconURL: Swift.String, isSelected: Swift.Bool)
+}
+
+
+
+
+
+public struct SavingGoalIconWidgetViewData : Swift.Hashable {
+  public var id: Swift.String
+  public var iconURL: Swift.String
+  public var title: Swift.String
+  public var iconBackgroundColor: SwiftUICore.Color
+  public init(id: Swift.String, iconURL: Swift.String, title: Swift.String, iconBackgroundColor: SwiftUICore.Color = Color.gray.opacity(0.2))
+  public static func == (a: BudgetSDK.SavingGoalIconWidgetViewData, b: BudgetSDK.SavingGoalIconWidgetViewData) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+
+
+
+
+
+public struct SpendingLimitProgressViewData : Swift.Hashable {
+  public init(id: Swift.String, categoryIconURL: Swift.String, categoryName: Swift.String, spentAmount: Swift.String, targetAmount: Swift.String)
+  public static func == (a: BudgetSDK.SpendingLimitProgressViewData, b: BudgetSDK.SpendingLimitProgressViewData) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+final public class BudgetSDKConfiguration {
+  public static var shared: BudgetSDK.BudgetSDKConfiguration?
+  final public let apiKey: Swift.String
+  final public let environment: BudgetSDK.BudgetSDKConfiguration.Environment
+  final public let enableLogging: Swift.Bool
+  final public let appearance: BudgetSDK.BudgetSDKAppearance
+  final public let localizationTableName: Swift.String?
+  final public let locale: Foundation.Locale?
+  public enum Environment {
+    case sandbox
+    case production
+    public static func == (a: BudgetSDK.BudgetSDKConfiguration.Environment, b: BudgetSDK.BudgetSDKConfiguration.Environment) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(apiKey: Swift.String, environment: BudgetSDK.BudgetSDKConfiguration.Environment = .sandbox, enableLogging: Swift.Bool = false, appearance: BudgetSDK.BudgetSDKAppearance = .default, localizationTableName: Swift.String? = nil, locale: Foundation.Locale? = nil)
+  @objc deinit
+}
+
+
+
+
+
+
+public enum TextFieldImageType {
+  case systemImage(Swift.String)
+  case localImage(Swift.String)
+}
+@_Concurrency.MainActor @preconcurrency public struct CustomTextField : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(text: SwiftUICore.Binding<Swift.String>, title: Swift.String? = nil, placeholder: Swift.String = "", imageType: BudgetSDK.TextFieldImageType? = nil, keyboardType: UIKit.UIKeyboardType = .default, onImageTap: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s9BudgetSDK15CustomTextFieldV4bodyQrvp", 0) __
+}
+extension BudgetSDK.CustomTextField {
+  @_Concurrency.MainActor @preconcurrency public init(text: SwiftUICore.Binding<Swift.String>, title: Swift.String? = nil, placeholder: Swift.String = "")
+  @_Concurrency.MainActor @preconcurrency public init(text: SwiftUICore.Binding<Swift.String>, title: Swift.String? = nil, placeholder: Swift.String = "", systemImage: Swift.String, onImageTap: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(text: SwiftUICore.Binding<Swift.String>, title: Swift.String? = nil, placeholder: Swift.String = "", localImage: Swift.String, onImageTap: (() -> Swift.Void)? = nil)
+}
+public struct BudgetThemeColor {
+  public init(light: UIKit.UIColor, dark: UIKit.UIColor? = nil)
+  public init(_ color: UIKit.UIColor)
+}
+public class BudgetSDKAppearance {
+  final public let colors: BudgetSDK.BudgetSDKAppearance.Colors
+  final public let typography: BudgetSDK.BudgetSDKAppearance.Typography
+  public class Colors {
+    public var brand: UIKit.UIColor
+    public var background: UIKit.UIColor
+    public var surface: UIKit.UIColor
+    public var textPrimary: UIKit.UIColor
+    public var textSecondary: UIKit.UIColor
+    public var textDisabled: UIKit.UIColor
+    public var textLink: UIKit.UIColor
+    public var buttonPrimaryBackground: UIKit.UIColor
+    public var buttonPrimaryForeground: UIKit.UIColor
+    public var buttonPrimaryDisabledBackground: UIKit.UIColor
+    public var buttonPrimaryDisabledForeground: UIKit.UIColor
+    public var buttonSecondaryBackground: UIKit.UIColor
+    public var buttonSecondaryForeground: UIKit.UIColor
+    public var buttonSecondaryDisabledBackground: UIKit.UIColor
+    public var buttonSecondaryDisabledForeground: UIKit.UIColor
+    public var buttonOutlineBackground: UIKit.UIColor
+    public var buttonOutlineForeground: UIKit.UIColor
+    public var buttonOutlineBorder: UIKit.UIColor
+    public var buttonOutlineDisabledBackground: UIKit.UIColor
+    public var buttonOutlineDisabledForeground: UIKit.UIColor
+    public var buttonOutlineDisabledBorder: UIKit.UIColor
+    public var buttonDestructiveBackground: UIKit.UIColor
+    public var buttonDestructiveForeground: UIKit.UIColor
+    public var buttonDestructiveBorder: UIKit.UIColor
+    public var buttonDestructiveDisabledBackground: UIKit.UIColor
+    public var buttonDestructiveDisabledForeground: UIKit.UIColor
+    public var buttonDestructiveDisabledBorder: UIKit.UIColor
+    public var checkboxChecked: UIKit.UIColor
+    public var checkboxUnchecked: UIKit.UIColor
+    public var checkboxDisabled: UIKit.UIColor
+    public var formFieldTitleColor: UIKit.UIColor
+    public var formFieldForeGroundColor: UIKit.UIColor
+    public var error: UIKit.UIColor
+    public var warning: UIKit.UIColor
+    public var success: UIKit.UIColor
+    public var border: UIKit.UIColor
+    public var divider: UIKit.UIColor
+    public var seperator: UIKit.UIColor
+    public var shadow: UIKit.UIColor
+    public var negativeAmountColor: UIKit.UIColor
+    public var positiveAmount: UIKit.UIColor
+    public init()
+    public func setColor<T>(_ keyPath: Swift.ReferenceWritableKeyPath<BudgetSDK.BudgetSDKAppearance.Colors, T>, _ themeColor: BudgetSDK.BudgetThemeColor) where T == UIKit.UIColor
+    public func resetToDefaults()
+    @objc deinit
+  }
+  public class Typography {
+    public var displayLarge: UIKit.UIFont
+    public var displayMedium: UIKit.UIFont
+    public var displaySmall: UIKit.UIFont
+    public var headlineLarge: UIKit.UIFont
+    public var headlineMedium: UIKit.UIFont
+    public var headlineSmall: UIKit.UIFont
+    public var titleLarge: UIKit.UIFont
+    public var titleMedium: UIKit.UIFont
+    public var titleSmall: UIKit.UIFont
+    public var labelLarge: UIKit.UIFont
+    public var labelMedium: UIKit.UIFont
+    public var labelSmall: UIKit.UIFont
+    public var bodyLarge: UIKit.UIFont
+    public var bodyMedium: UIKit.UIFont
+    public var bodySmall: UIKit.UIFont
+    public var button: UIKit.UIFont
+    public var caption: UIKit.UIFont
+    public var footnote: UIKit.UIFont
+    public var overline: UIKit.UIFont
+    public var numeric: UIKit.UIFont
+    public init()
+    public func applyCustomFont(_ fontName: Swift.String)
+    @objc deinit
+  }
+  public init()
+  public static let `default`: BudgetSDK.BudgetSDKAppearance
+  @objc deinit
+}
+
+
+public protocol MyneSavingGoalFormControllerDelegate : AnyObject {
+  func didTapOnNextButton()
+  func didTapOnEditIcon()
+  func didTapOnAddIcon()
+}
+@_hasMissingDesignatedInitializers public class MyneSavingGoalFormController : Combine.ObservableObject {
+  public enum FormState {
+    case editing
+    case creating
+    public static func == (a: BudgetSDK.MyneSavingGoalFormController.FormState, b: BudgetSDK.MyneSavingGoalFormController.FormState) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  weak public var delegate: (any BudgetSDK.MyneSavingGoalFormControllerDelegate)?
+  @Combine.Published @_projectedValueProperty($iconURL) public var iconURL: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $iconURL: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($goalName) public var goalName: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $goalName: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($targetAmount) public var targetAmount: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $targetAmount: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($selectedCurrency) public var selectedCurrency: BudgetSDK.CurrencyDataModel? {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $selectedCurrency: Combine.Published<BudgetSDK.CurrencyDataModel?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($targetDate) public var targetDate: Foundation.Date? {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $targetDate: Combine.Published<Foundation.Date?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($banks) public var banks: [BudgetSDK.Bank] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $banks: Combine.Published<[BudgetSDK.Bank]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($selectedAccount) public var selectedAccount: BudgetSDK.BankAccount? {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $selectedAccount: Combine.Published<BudgetSDK.BankAccount?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($showAccountScreen) public var showAccountScreen: Swift.Bool {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $showAccountScreen: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public func showFormView() -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public struct SpendingWidgetViewData : Swift.Hashable {
+  public var id: Swift.String
+  public var iconImageName: Swift.String
+  public var title: Swift.String
+  public var value: Swift.String
+  public init(id: Swift.String, iconImageName: Swift.String, title: Swift.String, value: Swift.String)
+  public static func == (a: BudgetSDK.SpendingWidgetViewData, b: BudgetSDK.SpendingWidgetViewData) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+
+
+
+
+
+
+
+public protocol MyneCashFlowDetailsControllerDelegate : AnyObject {
+  func didTapOnCharBar(selectedChartItems: [BudgetSDK.ChartDataItem])
+}
+@_hasMissingDesignatedInitializers public class MyneCashFlowDetailsController : Combine.ObservableObject {
+  weak public var delegate: (any BudgetSDK.MyneCashFlowDetailsControllerDelegate)?
+  @Combine.Published @_projectedValueProperty($title) public var title: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $title: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($amount) public var amount: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $amount: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($barChartData) public var barChartData: [BudgetSDK.ChartDataItem] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $barChartData: Combine.Published<[BudgetSDK.ChartDataItem]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($trnsactionListData) public var trnsactionListData: [BudgetSDK.TransactionViewRowData] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $trnsactionListData: Combine.Published<[BudgetSDK.TransactionViewRowData]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public func showStackedBar(configuration: BudgetSDK.StackedBarSectionConfiguration) -> some SwiftUICore.View
+  
+  public func showTransactionsList() -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func redactedWithShimmer(isLoading: Swift.Bool) -> some SwiftUICore.View
+  
+}
+public struct ChartDataItem : Swift.Hashable {
+  public init(id: Swift.String, xValue: Swift.String, legendName: Swift.String, barValue: Swift.Double, barFormattedValue: Swift.String, barHexColor: Swift.String)
+  public static func == (a: BudgetSDK.ChartDataItem, b: BudgetSDK.ChartDataItem) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol MyneSpendingLimitsDashboardScreenControllerDelegate : AnyObject {
+  func didUpdateMonth(currentDate: Foundation.Date)
+  func didTapOnNewLimitWidget()
+  func didTapOnOverallSpendingLimitWidget()
+}
+@_hasMissingDesignatedInitializers public class MyneSpendingLimitsDashboardScreenController : Combine.ObservableObject {
+  weak public var delegate: (any BudgetSDK.MyneSpendingLimitsDashboardScreenControllerDelegate)?
+  @Combine.Published @_projectedValueProperty($showAddNewLimitWidget) public var showAddNewLimitWidget: Swift.Bool {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $showAddNewLimitWidget: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($showOverallSpendingLimit) public var showOverallSpendingLimit: Swift.Bool {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $showOverallSpendingLimit: Combine.Published<Swift.Bool>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($spendingLimts) public var spendingLimts: [BudgetSDK.SpendingLimitProgressViewData] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $spendingLimts: Combine.Published<[BudgetSDK.SpendingLimitProgressViewData]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($spendingLimitOverAllData) public var spendingLimitOverAllData: BudgetSDK.SpendingLimitOverallModel {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $spendingLimitOverAllData: Combine.Published<BudgetSDK.SpendingLimitOverallModel>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public func showDashboard() -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class SpendingLimitsModule : Combine.ObservableObject {
+  public static var dashboard: BudgetSDK.MyneSpendingLimitsDashboardScreenController? {
+    get
+  }
+  public static var createLimit: BudgetSDK.MyneSpendingLimitCreationScreenController? {
+    get
+  }
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public protocol MyneSubCategoryScreenControllerDelegate : AnyObject {
+}
+public class MyneSubCategoryScreenController : Combine.ObservableObject {
+  weak public var delegate: (any BudgetSDK.MyneSubCategoryScreenControllerDelegate)?
+  public init()
+  public func showScreen() -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+
+public protocol MyneCashFlowDashboardControllerDelegate : AnyObject {
+  func didTapOnSaveBankAccounts(bankAccounts: [BudgetSDK.BankAccount])
+  func didSelectDateRange(startDate: Foundation.Date?, endDate: Foundation.Date?)
+  func didTapOnChartBar(items: [BudgetSDK.ChartDataItem])
+  func didTapOnTotalIncomeWidget()
+  func didTapOnCategoryIncomeWidget(data: BudgetSDK.CashFlowStreamWidgetData.Data)
+  func didTapOnTotalExpenseWidget()
+  func didTapOnCategoryExpenseWidget(data: BudgetSDK.CashFlowStreamWidgetData.Data)
+}
+public class MyneCashFlowDashboardController : Combine.ObservableObject {
+  weak public var delegate: (any BudgetSDK.MyneCashFlowDashboardControllerDelegate)?
+  @Combine.Published @_projectedValueProperty($stackedBarChartItems) public var stackedBarChartItems: [BudgetSDK.ChartDataItem] {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $stackedBarChartItems: Combine.Published<[BudgetSDK.ChartDataItem]>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($incomeStreamData) public var incomeStreamData: BudgetSDK.CashFlowStreamWidgetData? {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $incomeStreamData: Combine.Published<BudgetSDK.CashFlowStreamWidgetData?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($expenseStreamData) public var expenseStreamData: BudgetSDK.CashFlowStreamWidgetData? {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $expenseStreamData: Combine.Published<BudgetSDK.CashFlowStreamWidgetData?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($netDifferenceStreamData) public var netDifferenceStreamData: BudgetSDK.CashFlowStreamWidgetData? {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $netDifferenceStreamData: Combine.Published<BudgetSDK.CashFlowStreamWidgetData?>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public init()
+  public func showAccountAndDateSection(bankAccounts: [BudgetSDK.Bank]) -> some SwiftUICore.View
+  
+  public func showStackedBar(configuration: BudgetSDK.StackedBarSectionConfiguration) -> some SwiftUICore.View
+  
+  public func showCashFlowStreamWidgets() -> some SwiftUICore.View
+  
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public struct FilterType : Swift.Identifiable, Swift.Hashable {
+  public let id: Swift.String
+  public let title: Swift.String
+  public init(id: Swift.String, title: Swift.String)
+  public static func == (a: BudgetSDK.FilterType, b: BudgetSDK.FilterType) -> Swift.Bool
+  public typealias ID = Swift.String
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct GroupedFilter : Swift.Identifiable, Swift.Hashable {
+  public let id: Foundation.UUID
+  public let title: Swift.String
+  public let filterTypes: [BudgetSDK.FilterType]
+  public init(title: Swift.String, filterTypes: [BudgetSDK.FilterType])
+  public static func == (a: BudgetSDK.GroupedFilter, b: BudgetSDK.GroupedFilter) -> Swift.Bool
+  public typealias ID = Foundation.UUID
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct CashFlowStreamWidgetData : Swift.Hashable {
+  public struct Data : Swift.Hashable {
+    public init(title: Swift.String, value: Swift.String)
+    public static func == (a: BudgetSDK.CashFlowStreamWidgetData.Data, b: BudgetSDK.CashFlowStreamWidgetData.Data) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(arrowImageName: Swift.String?, streamTitle: Swift.String, value: Swift.String, data: [BudgetSDK.CashFlowStreamWidgetData.Data])
+  public static func == (a: BudgetSDK.CashFlowStreamWidgetData, b: BudgetSDK.CashFlowStreamWidgetData) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+
+public protocol MyneSavingGoalsDetailsControllerDelegate : AnyObject {
+  func didTapOnDeleteButton()
+}
+@_hasMissingDesignatedInitializers public class MyneSavingGoalsDetailsController : Combine.ObservableObject {
+  weak public var delegate: (any BudgetSDK.MyneSavingGoalsDetailsControllerDelegate)?
+  @Combine.Published @_projectedValueProperty($savedAmount) public var savedAmount: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $savedAmount: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($targetAmount) public var targetAmount: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $targetAmount: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($account) public var account: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $account: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($targetDate) public var targetDate: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $targetDate: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  @Combine.Published @_projectedValueProperty($daysLeft) public var daysLeft: Swift.String {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    _modify
+  }
+  public var $daysLeft: Combine.Published<Swift.String>.Publisher {
+    get
+    @available(iOS 14.0, tvOS 14.0, watchOS 7.0, macOS 11.0, *)
+    set
+  }
+  public func buildScreen() -> some SwiftUICore.View
+  
+  public var progressValue: Swift.Double {
+    get
+  }
+  public var percentageValue: Swift.String {
+    get
+  }
+  public typealias ObjectWillChangePublisher = Combine.ObservableObjectPublisher
+  @objc deinit
+}
+public enum SpendingModuleError : Swift.Error {
+  case moduleNotEnabled
+  case sdkNotConfigured
+  case unkown
+  public var localizedDescription: Swift.String {
+    get
+  }
+  public static func == (a: BudgetSDK.SpendingModuleError, b: BudgetSDK.SpendingModuleError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class Budget {
+  public static let shared: BudgetSDK.Budget
+  public static let appearance: BudgetSDK.BudgetSDKAppearance
+  public func configure(with configuration: BudgetSDK.BudgetSDKConfiguration)
+  public func setLanguage(_ languageCode: Swift.String)
+  @objc deinit
+}
+public enum SDKLocalization {
+  public static var currentLanguage: Swift.String {
+    get
+  }
+  public static var layoutDirection: SwiftUICore.LayoutDirection {
+    get
+  }
+}
+
+
+public struct SpendingCategoryModel : Swift.Hashable {
+  public init(id: Swift.String, iconURL: Swift.String, iconBackgroundColor: SwiftUICore.Color, title: Swift.String, currentValue: Swift.Int, isRepeatEnabled: Swift.Bool)
+  public static func == (a: BudgetSDK.SpendingCategoryModel, b: BudgetSDK.SpendingCategoryModel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct BankAccount : Swift.Hashable {
+  public let accountID: Swift.String
+  public let bankName: Swift.String
+  public let accountType: Swift.String
+  public let accountNumber: Swift.String
+  public let balance: Swift.String
+  public init(accountID: Swift.String, bankName: Swift.String, accountType: Swift.String, accountNumber: Swift.String, balance: Swift.String)
+  public static func == (a: BudgetSDK.BankAccount, b: BudgetSDK.BankAccount) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Bank : Swift.Hashable {
+  public let id: Swift.String
+  public let name: Swift.String
+  public let icon: Swift.String
+  public let accounts: [BudgetSDK.BankAccount]
+  public var accountCount: Swift.Int {
+    get
+  }
+  public init(id: Swift.String, name: Swift.String, icon: Swift.String, accounts: [BudgetSDK.BankAccount])
+  public static func == (a: BudgetSDK.Bank, b: BudgetSDK.Bank) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_Concurrency.MainActor @preconcurrency public struct AccountAndDateView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(banksData: [BudgetSDK.Bank], preSelectedAccounts: [BudgetSDK.BankAccount] = [], onAccountsChanged: (([BudgetSDK.BankAccount]) -> Swift.Void)? = nil, onDateTapped: ((Foundation.Date?, Foundation.Date?) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public func setSelectedAccounts(_ accountIds: Swift.Set<Swift.String>)
+  @_Concurrency.MainActor @preconcurrency public func setSelectedAccounts(_ accounts: [BudgetSDK.BankAccount])
+  @_Concurrency.MainActor @preconcurrency public func getSelectedAccounts() -> [BudgetSDK.BankAccount]
+  @_Concurrency.MainActor @preconcurrency public func getSelectedAccountIds() -> Swift.Set<Swift.String>
+  @_Concurrency.MainActor @preconcurrency public func clearSelection()
+  @_Concurrency.MainActor @preconcurrency public func selectAllAccounts()
+  @_Concurrency.MainActor @preconcurrency public func getSelectedDateRange() -> (startDate: Foundation.Date?, endDate: Foundation.Date?)
+  @_Concurrency.MainActor @preconcurrency public func setSelectedDateRange(startDate: Foundation.Date?, endDate: Foundation.Date?)
+  @_Concurrency.MainActor @preconcurrency public func clearDateSelection()
+  public typealias Body = @_opaqueReturnTypeOf("$s9BudgetSDK18AccountAndDateViewV4bodyQrvp", 0) __
+}
+public enum BankAccountSelectionMode {
+  case single
+  case multiple
+  public static func == (a: BudgetSDK.BankAccountSelectionMode, b: BudgetSDK.BankAccountSelectionMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_Concurrency.MainActor @preconcurrency public struct BankAccountsSelectionView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(banksData: [BudgetSDK.Bank], selectionMode: BudgetSDK.BankAccountSelectionMode = .multiple, preSelectedAccountIds: Swift.Set<Swift.String> = [], onSave: @escaping (Swift.Int, [BudgetSDK.BankAccount]) -> Swift.Void, onCancel: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s9BudgetSDK25BankAccountsSelectionViewV4bodyQrvp", 0) __
+}
+
+
+
+
+
+public struct StackedBarSectionConfiguration {
+  public init(barWidth: CoreFoundation.CGFloat, chartHeight: CoreFoundation.CGFloat, showLegends: Swift.Bool, canShowPopup: Swift.Bool, selectedBarColor: Swift.String?)
+}
+extension BudgetSDK.DateSelectorFieldView : Swift.Sendable {}
+extension BudgetSDK.CurrencySelectorFieldView : Swift.Sendable {}
+extension BudgetSDK.BankAccountSelectorFieldView : Swift.Sendable {}
+extension BudgetSDK.BudgetSDKConfiguration.Environment : Swift.Equatable {}
+extension BudgetSDK.BudgetSDKConfiguration.Environment : Swift.Hashable {}
+extension BudgetSDK.CustomTextField : Swift.Sendable {}
+extension BudgetSDK.MyneSavingGoalFormController.FormState : Swift.Equatable {}
+extension BudgetSDK.MyneSavingGoalFormController.FormState : Swift.Hashable {}
+extension BudgetSDK.SpendingModuleError : Swift.Equatable {}
+extension BudgetSDK.SpendingModuleError : Swift.Hashable {}
+extension BudgetSDK.AccountAndDateView : Swift.Sendable {}
+extension BudgetSDK.BankAccountSelectionMode : Swift.Equatable {}
+extension BudgetSDK.BankAccountSelectionMode : Swift.Hashable {}
+extension BudgetSDK.BankAccountsSelectionView : Swift.Sendable {}
