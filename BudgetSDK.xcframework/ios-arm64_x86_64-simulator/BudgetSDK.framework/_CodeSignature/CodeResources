@@ -6,61 +6,61 @@
 	<dict>
 		<key>Info.plist</key>
 		<data>
-		ddbeISqR1IqsrRoCfRn+KVUJH+k=
+		PLPlvuB5oJjdXdcSS8vPRFYOPE0=
 		</data>
 		<key>Modules/BudgetSDK.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		6juoe6dxzuCmNUoFQjOZt4uGp/4=
+		1jUoC4FIn4LDHAB/sWDktAH7UhQ=
 		</data>
 		<key>Modules/BudgetSDK.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		j5kvhf1mLEf8MerFErdrxrvM2N8=
+		FMSgyuDkEzCCkAMErn4hlQ+gOtQ=
 		</data>
 		<key>Modules/BudgetSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		BiNuOowUMFzYLeqWdYBfdph2bDc=
+		j4xuch2zTZb+IbcbRG4aEhThg9k=
 		</data>
 		<key>Modules/BudgetSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		7uUz9Aki+3ShyxaDTEKxEFNOPJk=
+		lk3C3nBbtSJWEseYfL5u2kr9rWg=
 		</data>
 		<key>Modules/BudgetSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		r0npi6KqKErESRrM6YfhsrHyXoc=
+		k5lcJxhal3N18A+c5RNj9C+Jz9Q=
 		</data>
 		<key>Modules/BudgetSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		7uUz9Aki+3ShyxaDTEKxEFNOPJk=
+		lk3C3nBbtSJWEseYfL5u2kr9rWg=
 		</data>
 		<key>Modules/BudgetSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		rKWo3Z4Vz1QJlTEHvyO5yJK4X0c=
+		JCpQu8IEzkcxVs9S+PY1PvRGzs8=
 		</data>
 		<key>Modules/BudgetSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		BiNuOowUMFzYLeqWdYBfdph2bDc=
+		j4xuch2zTZb+IbcbRG4aEhThg9k=
 		</data>
 		<key>Modules/BudgetSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		zGcDl6NgnnxqUVJcnqgaDsi2Fns=
+		YpV7/GdAaTo61rBqd2eR1icSMkY=
 		</data>
 		<key>Modules/BudgetSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		1Vn4EKRCMc4pgxO3L3cey3paaog=
+		AFidDA+6Q+BSAU2kwNdhVUZc2bY=
 		</data>
 		<key>Modules/BudgetSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		zGcDl6NgnnxqUVJcnqgaDsi2Fns=
+		YpV7/GdAaTo61rBqd2eR1icSMkY=
 		</data>
 		<key>Modules/BudgetSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		F8reP2J5cW5otAXeCYQpx9JcUTw=
+		1621WInhi/KbJHYNEV9OhwnkAAE=
 		</data>
 		<key>ar.lproj/BudgetLocalizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Vh4xnhtAZ+kUgMgX5htoMIZrYGQ=
+			Mdb+xBb6u04sV5a3Iux6uw1LvYA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -69,7 +69,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1DcaNoYZ2doLYIdZ+qvv8IcBxVw=
+			pMvigGHawPO5qQc27gh48/AIQk0=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -81,91 +81,91 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			11MlYYQ6sHyoyLLBidG15PQ8LQF9vcKGzcptobMHrlo=
+			BX6N6UX1cfAkfnND8ikx4cFIX3FY+Jbv2aBGiXFGj6Y=
 			</data>
 		</dict>
 		<key>Modules/BudgetSDK.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tG17y7jPjaQIP+IF9ukZudDcMTBBXWOiaZsW5pTdxrg=
+			seunm09gGDiGJNn0OWRqUmWe+K3KoivIQXEcf5cXbS0=
 			</data>
 		</dict>
 		<key>Modules/BudgetSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			09I+9EQDrZg+3H9aHxSLbhIrzwWEXaHjztd4nGMXZZE=
+			H7ylgeNQ2qFqHWpHZXJppfSBGtCstupzBVrOyyoQwko=
 			</data>
 		</dict>
 		<key>Modules/BudgetSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xdDC59ggGhayx/dbnNsPV/T81EWzLOZWZRJYylNKYD4=
+			Y2LfhqNO+nQOA8H4p/rU1/GZ1gOFUaKM7mhU33CFvYk=
 			</data>
 		</dict>
 		<key>Modules/BudgetSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			K/aiFXAutwv5bMANAX4mhvYBHv2uEiKzwxWhXSFhXdk=
+			ssMBreJWNI1KHRPQwnb99fZEopxTA/JJu0iBdKwyD7I=
 			</data>
 		</dict>
 		<key>Modules/BudgetSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xdDC59ggGhayx/dbnNsPV/T81EWzLOZWZRJYylNKYD4=
+			Y2LfhqNO+nQOA8H4p/rU1/GZ1gOFUaKM7mhU33CFvYk=
 			</data>
 		</dict>
 		<key>Modules/BudgetSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TsJ79HhT5ioBVUHNeZXxXFsPXt9oPsHaK73hJEoBSqU=
+			SsOMoGFIw2Rhw7197kbTvkrXi6aJ24WqAMaTzPXTX5M=
 			</data>
 		</dict>
 		<key>Modules/BudgetSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			09I+9EQDrZg+3H9aHxSLbhIrzwWEXaHjztd4nGMXZZE=
+			H7ylgeNQ2qFqHWpHZXJppfSBGtCstupzBVrOyyoQwko=
 			</data>
 		</dict>
 		<key>Modules/BudgetSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9j0pBEhKNSFdSDFXALN6wZBnCiy+RjMqPz3NajZb9Dw=
+			tONSEmouS/iIMPGTJkmg7qs31pZmaRxQTxWkA7+8x2U=
 			</data>
 		</dict>
 		<key>Modules/BudgetSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			o5yf8b7rEO/7WI4tAPvA7jn88xk6FEdhFVD22vzEDOs=
+			WcVAY1+8t8CkZ/kwQCsgMwTXsz2IPonPlthfzt2OUYE=
 			</data>
 		</dict>
 		<key>Modules/BudgetSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9j0pBEhKNSFdSDFXALN6wZBnCiy+RjMqPz3NajZb9Dw=
+			tONSEmouS/iIMPGTJkmg7qs31pZmaRxQTxWkA7+8x2U=
 			</data>
 		</dict>
 		<key>Modules/BudgetSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PchCBEabnxbJDVPmIp3Fh8liQzpTAZg3V0Vf/MK4SHE=
+			zw44EEJlN1+/NP3tKlm6HrEh7S/ZFS7QR0Y4I1e6nwA=
 			</data>
 		</dict>
 		<key>ar.lproj/BudgetLocalizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cq8Cd0RgwGMatSn08t8f8ZC3MTvPWisp6lNO+yyK8Zc=
+			RUFrR2YgCi2QhtXHlSn8PC47o2kjzqRd3ylX6Ay52CA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -174,7 +174,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eVXsLMGruYhLNE50CzQCNRWYVLFg4/38RvwOrKSyioY=
+			Vu/fHb5Tr9j2C10OH3p1YGJ0UjcFmdzSH54yZVY5xfc=
 			</data>
 			<key>optional</key>
 			<true/>
